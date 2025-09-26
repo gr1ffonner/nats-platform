@@ -1,76 +1,48 @@
-# Go Platfrom
+# NATS Messaging Project
 
-## [Readme](https://github.com/gr1ffonner/go-platform/blob/feature/postgresql-nats-otel-tempo/docs/README.md) проекта
+A Go project demonstrating NATS messaging patterns including pub/sub, load balancing, and JetStream persistence.
 
-## Общее
+## Project Overview
 
-### Monitoring
-- Grafana
-- Prometheus
-- log/slog в stdout 
+This project showcases NATS messaging capabilities with:
+- **Core NATS**: Pub/Sub messaging patterns
+- **JetStream**: Persistent messaging with guaranteed delivery
+- **Load Balancing**: Queue groups for distributed processing
+- **Monitoring**: NATS server monitoring and metrics
 
-### File storage
-- S3
+## Services & Ports
 
-# Ниже ветки по разным стекам бд/брокеры/трейсинг 
+| Service | Port | Description |
+|---------|------|-------------|
+| **NATS Server** | 4222 | Message broker |
+| **NATS Monitor** | 8222 | NATS monitoring dashboard |
 
-## PostgreSQL 
+## Quick Start
 
-### PostgreSQL + Kafka
-#### Tracing: Jaeger
-- [feature/postgresql-kafka-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/postgresql-kafka-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/postgresql-kafka-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/postgresql-kafka-otel-tempo)
+### Prerequisites
+- Docker & Docker Compose
+- Go 1.21+
+- Make
 
-### PostgreSQL + NATS
-#### Tracing: Jaeger
-- [feature/postgresql-nats-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/postgresql-nats-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/postgresql-nats-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/postgresql-nats-otel-tempo)
+### Commands
 
-### PostgreSQL + RabbitMQ
-#### Tracing: Jaeger
-- [feature/postgresql-rabbitmq-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/postgresql-rabbitmq-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/postgresql-rabbitmq-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/postgresql-rabbitmq-otel-tempo)
+#### Infrastructure Management
+```bash
+# Start NATS server
+make up
 
-## MySQL
+# Stop NATS server
+make down
+```
 
-### MySQL + Kafka
-#### Tracing: Jaeger
-- [feature/mysql-kafka-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/mysql-kafka-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/mysql-kafka-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/mysql-kafka-otel-tempo)
+#### Application
+```bash
+# Run consumer
+make run-consumer
 
-### MySQL + NATS
-#### Tracing: Jaeger
-- [feature/mysql-nats-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/mysql-nats-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/mysql-nats-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/mysql-nats-otel-tempo)
+# Run producer
+make run-producer
+```
 
-### MySQL + RabbitMQ
-#### Tracing: Jaeger
-- [feature/mysql-rabbitmq-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/mysql-rabbitmq-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/mysql-rabbitmq-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/mysql-rabbitmq-otel-tempo)
-
-## ClickHouse
-
-### ClickHouse + Kafka
-#### Tracing: Jaeger
-- [feature/clickhouse-kafka-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/clickhouse-kafka-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/clickhouse-kafka-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/clickhouse-kafka-otel-tempo)
-
-### ClickHouse + NATS
-#### Tracing: Jaeger
-- [feature/clickhouse-nats-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/clickhouse-nats-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/clickhouse-nats-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/clickhouse-nats-otel-tempo)
-
-### ClickHouse + RabbitMQ
-#### Tracing: Jaeger
-- [feature/clickhouse-rabbitmq-jaeger](https://github.com/gr1ffonner/go-platform/tree/feature/clickhouse-rabbitmq-jaeger)
-#### Tracing: OTEL + Tempo
-- [feature/clickhouse-rabbitmq-otel-tempo](https://github.com/gr1ffonner/go-platform/tree/feature/clickhouse-rabbitmq-otel-tempo)
-
+## Monitoring
+- **NATS Monitor**: http://localhost:8222
