@@ -1,0 +1,14 @@
+services:
+  nats:
+    image: nats:2.10-alpine
+    container_name: platform_nats
+    ports:
+      - "${NATS_PORT:-4222}:4222"
+      - "${NATS_MONITOR_PORT:-8222}:8222"
+    command: ["-m", "8222", "-js"]
+    networks:
+      - platform_network
+
+networks:
+  platform_network:
+    driver: bridge
