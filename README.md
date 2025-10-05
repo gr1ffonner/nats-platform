@@ -1,14 +1,4 @@
-# NATS Messaging Project
-
-A Go project demonstrating NATS messaging patterns including pub/sub, load balancing, and JetStream persistence.
-
-## Project Overview
-
-This project showcases NATS messaging capabilities with:
-- **Core NATS**: Pub/Sub messaging patterns
-- **JetStream**: Persistent messaging with guaranteed delivery
-- **Load Balancing**: Queue groups for distributed processing
-- **Monitoring**: NATS server monitoring and metrics
+# NATS Platform
 
 ## Services & Ports
 
