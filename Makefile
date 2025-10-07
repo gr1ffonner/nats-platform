@@ -13,10 +13,10 @@ run-producer:
 
 
 # Start all services
-up:
-	COMPOSE_PROJECT_NAME=go-platform docker compose -f docker-compose.yml --profile=test --env-file=.env-docker up -d --build
+up-dev:
+	COMPOSE_PROJECT_NAME=nats-platform docker compose -f docker-compose.yml --env-file=.env up -d --build
 
 
 # Stop all services
 down:
-	COMPOSE_PROJECT_NAME=go-platform docker compose -f docker-compose.yml --profile=test --env-file=.env-docker down --remove-orphans
+	COMPOSE_PROJECT_NAME=nats-platform docker compose -f docker-compose.yml --env-file=.env down --remove-orphans
